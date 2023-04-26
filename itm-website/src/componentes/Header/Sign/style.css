@@ -1,0 +1,9 @@
+.account-input {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 890;
+}
+
+.account-input:hover {
+    color: #ff5510;
+}

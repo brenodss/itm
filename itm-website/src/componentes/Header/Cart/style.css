@@ -1,0 +1,13 @@
+.cart-counter {
+    text-align: center;
+    position: relative;
+    border-radius: 100%;
+    background: #ff5510;
+    font: 13px/19px "Open Sans",Arial,Helvetica,sans-serif;
+    font-weight: 600;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    top: -7px;
+    left: -23px;
+}

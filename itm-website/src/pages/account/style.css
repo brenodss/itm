@@ -1,0 +1,106 @@
+.account-wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    /* background-image: url('../../assets/wave.svg'); */
+    /* margin-bottom: -80px; */
+}
+
+.account-card {
+    background-color: #1A1A1A;
+    height: clamp(25rem, 30rem, 35rem);
+    width: 30rem;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    }
+
+.account-card input {
+    height: 3rem;
+    width: 20rem;
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+    text-indent: 20px;
+    border: transparent;
+    padding: 4px;
+    margin-left: 15%;
+    border: 1px solid transparent;
+
+}
+
+.account-card input:focus {
+    outline: none;
+    border: 1px solid #ff5510;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+  }
+
+.sign-in {
+    background: #00a000;
+    color: #fff;
+    margin: 20px 0 0 0;
+    padding: 8px 20px;
+    transition: .5s;
+    border-radius: 2px;
+    margin-left: 15%;
+}
+.sign-up {
+    /* background: #ff5510; */
+    color: #ff5510;
+    margin: 20px 0 0 0;
+    padding: 8px 20px;
+    transition: .5s;
+    border-radius: 2px;
+    margin-left: 10%;
+    font-size: 17px;
+}
+
+.login-title {
+    color: #ff5510;
+    position: relative;
+    top: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    word-spacing: 22px;
+}
+
+.title-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 10%;
+}
+
+.client-p {
+    color: #fff;
+    margin-top: -10px;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.user-svg {
+    position: relative;
+    top: -93px;
+    left: 90px;
+}
+
+.wave-background {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+}

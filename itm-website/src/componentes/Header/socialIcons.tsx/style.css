@@ -1,0 +1,9 @@
+.social-logos img{
+    margin-right: 0.5rem;
+}
+
+.social-logos {
+    position: absolute;
+    top: 0px;
+    left: 60px;
+}

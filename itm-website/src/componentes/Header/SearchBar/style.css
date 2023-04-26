@@ -1,0 +1,20 @@
+.search-wraper {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+}
+    
+@media (min-width: 1050px) {
+    .MuiTextField-root {
+
+        }      
+    }
+@media (max-width: 1049px) {
+    .search-wraper {
+        position: absolute;
+        top: 5.3rem;
+      }
+    .search-input {
+        width: 100vw;
+    }
+}
