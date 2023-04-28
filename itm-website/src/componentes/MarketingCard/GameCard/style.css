@@ -1,26 +1,25 @@
-.banner-wrapper {
-    /* position: relative; */
-    /* width: 100%; */
-    /* display: flex;
-    flex-direction: row; */
-    /* margin: auto; */
-    margin-top: 5.5rem;
-    /* top: 0; */
+@media (min-width: 1050px) {
+    .banner-wrapper {
+        margin-top: 5.5rem;
+        margin-bottom: 5rem;
+    }
+    .dungeon-img {
+        width: 100%;
+        height: 20vh;
+    }
+}
+@media (max-width: 1049px) {
+    .banner-wrapper {
+        margin-top: 8.6rem;
+        height: 5rem;
+        margin-bottom: 14rem;
+    }
+    .dungeon-img {
+        width: 100%;
+        height: 23vh;
+    }
 }
 
 .dungeon-img {
-    /* position: relative; */
     width: 100%;
-}
-
-.gaming-text {
-    position: absolute;
-    z-index: 5;
-    bottom: 27rem;
-    left: 6rem;
-    font-family: Arial, sans-serif; /* escolha uma fonte adequada para o seu projeto */
-    font-size: 150%; /* tamanho da fonte */
-    font-weight: bold; /* define o peso da fonte */
-    color: #ffffff; /* cor do texto */
-    text-shadow: 2px 2px #ff8c00; /* adiciona uma sombra ao texto com cor laranja */
 }
