@@ -35,6 +35,13 @@ export default function SearchBar() {
             },
             '@media (max-width: 1049px)': {
               width: '100%',
+              backgroundColor: '#333333',
+              color: 'white',
+
+              '& .MuiInputAdornment-root .MuiSvgIcon-root': {
+                color: 'white',
+                marginRight: '1rem',
+              },
             }
           },
         }}
