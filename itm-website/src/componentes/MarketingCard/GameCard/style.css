@@ -4,7 +4,7 @@
         margin-bottom: 5rem;
     }
     .dungeon-img {
-        width: 100%;
+        width: 100vw;
         height: 20vh;
     }
 }
@@ -15,11 +15,11 @@
         margin-bottom: 14rem;
     }
     .dungeon-img {
-        width: 100%;
+        width: 100vw;
         height: 23vh;
     }
 }
 
 .dungeon-img {
-    width: 100%;
+    width: 100vw;
 }
