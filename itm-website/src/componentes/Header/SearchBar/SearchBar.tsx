@@ -18,10 +18,12 @@ export default function SearchBar() {
         sx={{
           '& .MuiOutlinedInput-root': {
             borderRadius: '4px',
-            height: '3.3rem',
+            height: '4.5vh',
             width: '45vw',
             backgroundColor: '#fff',
             color: '#333',
+            fontSize: '16px',
+            spellCheck: 'false',
 
             '& fieldset': {
               borderColor: 'transparent',
@@ -34,10 +36,11 @@ export default function SearchBar() {
               border: '1px solid #ff5510',
             },
             '@media (max-width: 1049px)': {
-              width: '100%',
+              width: '100vw',
               backgroundColor: '#333333',
               color: 'white',
-
+              height: '4vh',
+              left: '0px',
               '& .MuiInputAdornment-root .MuiSvgIcon-root': {
                 color: 'white',
                 marginRight: '1rem',

@@ -1,5 +1,6 @@
 import './style.css'
 import { useNavigate } from 'react-router-dom'
+import UserSign from '../../../assets/user-sign.svg'
 
 function SignIn() {
   const navigate = useNavigate()
@@ -9,13 +10,16 @@ function SignIn() {
   }
 
   return (
-    <div>
-        <button onClick={handleButton} className='account-input'>
-            Entrar
-        </button>
-        <button onClick={handleButton} className='account-input'>
-            Registrar
-        </button>
+    <div className='display-row-center'>
+        <img src={UserSign} />
+        <div>
+          <button onClick={handleButton} className='account-input'>
+              Entrar
+          </button>
+          <button onClick={handleButton} className='account-input'>
+              Registrar
+          </button>
+        </div>
     </div>
   )
 }

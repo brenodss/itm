@@ -5,8 +5,8 @@ import facebook from '../../../assets/facebook.svg'
 function SocialIcons() {
   return (
     <div className='social-logos'>
-        <img src={instagram} />
-        <img src={facebook} />
+        <img className='icon' src={instagram} />
+        <img className='icon' src={facebook} />
     </div>
   )
 }
