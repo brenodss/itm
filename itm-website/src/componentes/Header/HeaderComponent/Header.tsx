@@ -10,21 +10,21 @@ import SocialIcons from '../socialIcons.tsx/SocialIcons';
 export default function Header() {
   return (
       <div className='header'>
-        <div className='display-row-evenly-y-around'>
-          <div className='display-row-evenly-y-around itm-and-logos'>
-            <BurguerMenu /> 
-            {/* <SocialIcons /> */}
-            <ItmTitle />
-          </div>
-
-          <SearchBar />
-          
-          <div className='display-row-evenly-y'>
-            <SignIn />
-            <Cart />
-          </div>
+        <div className='menu'>
+          <BurguerMenu /> 
         </div>
-
+        <div className='title'>
+          <ItmTitle />
+        </div>
+        <div className='searchbar'>
+          <SearchBar />
+        </div>
+        <div className='signin'>
+          <SignIn />
+        </div>
+        <div className='cart'>
+          <Cart />
+        </div>
       </div>
   )
 }
