@@ -13,3 +13,25 @@
     flex-direction: row;
     align-items: center;
 }
+
+@media (min-width: 1050px) {
+    .dropdown-login {
+        display: none;
+    }
+
+    .account-input {
+        display: block;
+    }
+}
+@media (max-width: 1049px) {
+    .dropdown-login {
+        display: block;
+        position: relative;
+        left: -20px;
+        top: 4px;
+    }
+
+    .account-input {
+        display: none !important;
+    }
+}

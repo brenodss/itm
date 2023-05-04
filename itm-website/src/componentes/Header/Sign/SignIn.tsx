@@ -1,6 +1,7 @@
 import './style.css'
 import { useNavigate } from 'react-router-dom'
 import UserSign from '../../../assets/user-sign.svg'
+import DropDown from '../../../assets/dropdown.svg'
 
 function SignIn() {
   const navigate = useNavigate()
@@ -20,6 +21,9 @@ function SignIn() {
               Registrar
           </button>
         </div>
+        <button onClick={handleButton} className='dropdown-login'>
+            <img src={DropDown}></img>
+        </button>
     </div>
   )
 }
