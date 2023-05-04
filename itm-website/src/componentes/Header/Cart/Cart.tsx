@@ -4,7 +4,7 @@ import './style.css'
 function Cart() {
   return (
     <button>
-        <img src={ShoppingCart}/>
+        <img className='cart-img' src={ShoppingCart}/>
         <div className='cart-counter'>0</div>
     </button>
   )

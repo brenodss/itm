@@ -9,18 +9,20 @@ import SocialIcons from '../socialIcons.tsx/SocialIcons';
 
 export default function Header() {
   return (
-      <div className='header display-row-evenly-y-center'>
-        <div className='display-row-evenly-y-center itm-and-logos'>
-          <BurguerMenu /> 
-          <SocialIcons />
-          <ItmTitle />
-        </div>
+      <div className='header'>
+        <div className='display-row-evenly-y-around'>
+          <div className='display-row-evenly-y-around itm-and-logos'>
+            <BurguerMenu /> 
+            {/* <SocialIcons /> */}
+            <ItmTitle />
+          </div>
 
-        <SearchBar />
-        
-        <div className='display-row-evenly-y-center'>
-          <SignIn />
-          <Cart />
+          <SearchBar />
+          
+          <div className='display-row-evenly-y'>
+            <SignIn />
+            <Cart />
+          </div>
         </div>
 
       </div>

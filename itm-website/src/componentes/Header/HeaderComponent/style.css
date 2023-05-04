@@ -1,36 +1,61 @@
+
 .display-row-evenly-y-center {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.display-row-evenly-y-around {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+@media (min-width: 1050px) {
+    .display-row-evenly-y-around {
+    }
+}
+
+@media (max-width: 1049px) {
+    .display-row-evenly-y-around {
+        width: 70vw;
+    }
+}
+
+.display-row-evenly-y {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (min-width: 1050px) {
     .header {
         width: 100%;
-        height: 5.5rem;
+        height: 7vh;
         background-color: #222;
         position: fixed;
         top: 0;
         left: 0;
         z-index: 10;
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 
 @media (max-width: 1049px) {
     .header {
         width: 100%;
-        height: 5.5rem;
+        height: 7vh;
         background-color: #222;
         position: fixed;
         top: 0;
         left: 0;
         z-index: 10;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
     }
 }
 
@@ -44,12 +69,8 @@ button {
 }
 
 /* .itm-and-logos {
-    height: 100%;
-    margin-bottom: 0;
-    position: relative;
-    padding: 0;
-    margin: 0;
-    top: -1.5rem;
+    display: flex;
+    margin-right: 50%;
 } */
 
 
