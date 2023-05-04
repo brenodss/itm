@@ -19,7 +19,7 @@ export default function SearchBar() {
           '& .MuiOutlinedInput-root': {
             borderRadius: '4px',
             height: '4.5vh',
-            width: '45vw',
+            width: '55vw',
             backgroundColor: '#fff',
             color: '#333',
             fontSize: '16px',
@@ -44,6 +44,7 @@ export default function SearchBar() {
               '& .MuiInputAdornment-root .MuiSvgIcon-root': {
                 color: 'white',
                 marginRight: '1rem',
+                fontSize: '20px'
               },
             }
           },
