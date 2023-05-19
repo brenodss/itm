@@ -23,12 +23,13 @@ function Products() {
     return (
         <div className='product-grid'>
             {products && products?.map(({image, title, price, id}, i) => {
+                const reducedTitle = title.length > 55 ? title.slice(0, 55)+'...' : title
                 return (
                     <div key={i} className='product-card'>
                         <button onClick={() => handleGoToProduct(id)} className='product-button'>
                             <img className='product-image' src={image} />
                         </button>
-                            <span className="product-title">{title}</span>
+                            <span className="product-title">{reducedTitle}</span>
                             <span className='product-price-without-discount'>R${Number(price) + 100}</span>  
                             <span className='product-price'>R${price}</span>  
                             <span className='product-price-installments'>{`12x R$ ${Number(price/12).toFixed(2)} sem juros`}</span>  
