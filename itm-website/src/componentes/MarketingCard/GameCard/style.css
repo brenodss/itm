@@ -1,11 +1,11 @@
 @media (min-width: 1050px) {
     .banner-wrapper {
-        margin-top: 5.5rem;
+        margin-top: 5.44rem;
         margin-bottom: 5rem;
     }
     .dungeon-img {
         width: 100vw;
-        height: 20vh;
+        height: 30vh;
     }
 }
 @media (max-width: 1049px) {
