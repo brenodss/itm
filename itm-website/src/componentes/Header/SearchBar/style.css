@@ -13,7 +13,7 @@
 @media (max-width: 1049px) {
     .search-wraper {
         position: absolute;
-        top: 7vh;
+        top: 6rem;
       }
     .search-input {
         width: 100vw;

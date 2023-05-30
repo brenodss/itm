@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom'
 function ItmTitle() {
   const navigate = useNavigate()
   return (
-    <div className='itm-wrapper'>
+    <div className='flex flex-row m-0 p-0'>
       <button onClick={() => navigate('/')}>
-        <img className='itm-logo' src={ItmLogo} />
+        <img className='max-w-none w-[18rem] h-[4rem]' src={ItmLogo} />
       </button>
     </div>
   )
