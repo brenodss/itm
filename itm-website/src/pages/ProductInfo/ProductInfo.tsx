@@ -18,27 +18,42 @@ function ProductInfo() {
 	}, [])
 
   return (	
-    <div className='product-info-wrapper'>
+    <div className='flex flex-row justify-center items-center'>
 		{productInfo && 
 		<div className='product-info-card'>
 			<img className='product-info-image' src={productInfo["image"]}></img>
-			<div className='buy-product-card-grid'>
-				<p className='prod-info-title title'>{productInfo["title"]}</p>
-				<div className='stars'>
-					<RatingStars rating={5} />
+
+			<div className='border border-gray-300 w-8/12 min-w-[55%] h-full bg-opacity-75 bg-gray-900 ml-10 box-border rounded-md flex flex-col justify-around'>
+
+				<p className='text-4xl text-gray-100 pl-5'>{productInfo["title"]}</p>
+
+				<div className='stars pl-2'>
+					<RatingStars rating={4.3} />
+					<p className='pl-3 text-2xl text-slate-200'>Vendidos: 428</p>
 				</div>
-				<div className="product-prices">
-					<p className='from'>De:</p>
-					<p className='previous-price'>R${productInfo["price"]}</p>
-					<br />
-					<p className=''>Por: </p>
-					<p className='product-info-price'>R${productInfo["price"]}</p>
+				
+				
+				<div className="product-prices pl-5">
+					<div className='flex flex-row items-center text-center'>
+						<p className='mr-12 text-2xl text-slate-300'>De: </p>
+						<p className='text-4xl text-slate-300 line-through'>R${productInfo["price"] + 30}</p>
+					</div>
+
+					<div className='flex flex-row'>
+						<p className='mt-3 mr-10 text-2xl text-slate-300'>Por: </p>
+						<p className='text-green-400 text-5xl'>R${productInfo["price"]}</p>
+					</div>
+					<p className='text-2xl text-slate-200'>à vista com 10% de desconto no boleto ou pix</p>
 				</div>
 
-				<span className='tag tag1'>Frete grátis</span>
-				<span className='tag tag2'>Entrega rápida</span>
-				<span className='tag tag3'>Pagamento em até 12x</span>
-				<button className='buy-button'>COMPRAR COM DESCONTO 💳</button>
+				<div className='flex flex-col'>
+					<span className='tag tag1'>🚚 Frete grátis</span>
+					<span className='tag tag2'>💨 Entrega rápida</span>
+					<span className='tag tag3'>🤑 Pagamento em até 12x</span>
+				</div>
+
+				<p className='mt-10 ml-5 text-4xl text-green-300'>📅12 meses de garantia</p>
+				<button className='bg-green-500 text-white font-bold text-4xl rounded-md h-20 w-full relative -bottom-11 flex items-center justify-center'>COMPRAR COM DESCONTO 💳</button>
 			</div>
 		</div>
 		}
