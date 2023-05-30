@@ -30,6 +30,7 @@ function RatingStars(props: { rating: number }) {
       <h1 className='text-slate-100 text-2xl'>({rating})</h1>
     </div>
   )
+
 }
 
 export default RatingStars
