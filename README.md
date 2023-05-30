@@ -25,7 +25,11 @@ git clone git@github.com:brenodss/itm.git
 ``
 npm i
 ``
-3. Iniciar o site no servidor local acessando:
+3. Iniciar o projeto:
+``
+npm run dev
+``
+4. Acessar o servidor local:
 ``
 http://localhost:5173/
 ``
