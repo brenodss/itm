@@ -6,6 +6,8 @@
     color:#ff5510;
 }
 
+
+
 @media (min-width: 1340px) {
     .product-info-image {
         width: 500px;
@@ -14,17 +16,9 @@
 }
 @media (max-width: 1339px) {
     .product-info-image {
-        width: clamp(284px, 302px, 350px);
-        height: 60%
+        width: clamp(340px, 380px, 410px);
+        height: 70%
     }
-}
-
-
-.product-info-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 }
 
 .product-info-card {
@@ -35,105 +29,6 @@
     justify-content: space-evenly;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 2px 0px;
-}
-
-.title {
-    grid-area: title;
-
-}
-  
-  .stars {
-    grid-area: stars;
-  }
-  
-  .discount {
-    grid-area: discount;
-  }
-  
-  .tags {
-    grid-area: tags;
-  }
-  
-  .button {
-    grid-area: button;
-  }
-
-.buy-product-card-grid  {
-    border: 1px solid #ccc;
-    width: clamp(90rem, 120rem, 150rem);
-    height: 40rem;
-    background-color: #282828ee;
-    margin-left: 10px;
-    box-sizing: border-box;
-    border-radius: 8px;
-
-    display: flex;
-    flex-direction:column;
-    justify-content: space-around; 
-   
-    /* display: grid;
-    grid-template-rows: 20% repeat(6, 1fr) 20%;
-    grid-template-areas:"title stars discount tags button"; */
-
-}
-
-.buy-product-card p {
-    font-family: "Open Sans", Arial, Helvetica, sans-serif;
-    line-height: normal;
-    text-align: start;
-    margin-left: 1rem;
-}
-
-.buy-product-card button {
-    justify-content: center;
-}
-
-
-.prod-info-title {
-    font-size: 24px;
-    line-height: 30px;
-    font-weight: 490;
-    color: #fff;
-    text-align: start;
-}
-
-.product-info-price {
-    color: #73c300;
-    font-size: 35px;
-}
-.product-prices {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.product-discount-wrapper {
-    height: 50px;
-}
-
-.previous-price {
-    text-decoration: line-through;
-    color: #ffffff;
-    font-size: 17px;
-}
-.from, .to {
-    color: #ccc;
-    font-size: 14px;
-}
-
-
-.buy-button {
-    color: #ffffff;
-    width: 100%;
-    height: 5.4rem;
-    background-color: #73c300;
-    border-radius: 3px;
-    font-size: 18px;
-    font-weight: 700;
-    text-align: center;
-
-    position: relative;
-    bottom: -8px;
 }
 
 .tag {
