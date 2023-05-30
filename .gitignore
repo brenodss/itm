@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Dependecys
-node_modules/
+node_modules
