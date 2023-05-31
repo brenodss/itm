@@ -29,11 +29,11 @@ function Products() {
                         <button onClick={() => handleGoToProduct(id)} className='product-button'>
                             <img className='product-image' src={image} />
                         </button>
-                            <span className="product-title">{reducedTitle}</span>
+                            <span className="product-title text-2xl text-gray-950 font-medium font-sans">{reducedTitle}</span>
                             <span className='product-price-without-discount'>R${Number(price) + 100}</span>  
                             <span className='product-price'>R${price}</span>  
                             <span className='product-price-installments'>{`12x R$ ${Number(price/12).toFixed(2)} sem juros`}</span>  
-                        <button className='add-cart'>Adicionar ao carrinho 🛒</button>
+                        <button className='add-cart text-2xl'>Adicionar ao carrinho 🛒</button>
                     </div>
                 )
             })}
