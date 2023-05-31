@@ -12,7 +12,7 @@ function SignIn() {
 
   return (
     <div className='display-row-center'>
-        <img src={UserSign} />
+        <img className='h-[4rem] w-[4rem]' src={UserSign} />
         <div>
           <button onClick={handleButton} className='account-input'>
               Entrar
@@ -22,7 +22,7 @@ function SignIn() {
           </button>
         </div>
         <button onClick={handleButton} className='dropdown-login'>
-            <img src={DropDown}></img>
+            <img className='w-[2rem] h-[2rem] max-w-none max-h-none' src={DropDown}></img>
         </button>
     </div>
   )

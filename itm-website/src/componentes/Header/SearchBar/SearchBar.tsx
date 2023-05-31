@@ -18,7 +18,7 @@ export default function SearchBar() {
         sx={{
           '& .MuiOutlinedInput-root': {
             borderRadius: '4px',
-            height: '4.5vh',
+            height: '3rem',
             width: '55vw',
             backgroundColor: '#fff',
             color: '#333',
@@ -39,7 +39,7 @@ export default function SearchBar() {
               width: '100vw',
               backgroundColor: '#333333',
               color: 'white',
-              height: '4vh',
+              height: '3rem',
               left: '0px',
               '& .MuiInputAdornment-root .MuiSvgIcon-root': {
                 color: 'white',
