@@ -1,5 +1,4 @@
 import './style.css'
-import ReactStars from 'react-stars'
 
 interface IStarIconProps {
   color: string
