@@ -6,9 +6,10 @@ export default function SearchBar() {
   return (
     <div className='search-wraper'>
       <TextField
-        className="search-input !important"
+        spellCheck="false"
+        className="search-input !important font-[Poppins]"
+        placeholder='O que esta procurando ?'
         InputProps={{
-          disableUnderline: true,
           endAdornment: (
             <InputAdornment position='end'>
               <SearchIcon />
@@ -17,13 +18,13 @@ export default function SearchBar() {
         }}
         sx={{
           '& .MuiOutlinedInput-root': {
-            borderRadius: '4px',
-            height: '3rem',
+            height: '3.8rem',
             width: '55vw',
             backgroundColor: '#fff',
             color: '#333',
-            fontSize: '16px',
+            fontSize: '1.8rem',
             spellCheck: 'false',
+            fonteFamily: 'Poppins',
 
             '& fieldset': {
               borderColor: 'transparent',
@@ -39,12 +40,22 @@ export default function SearchBar() {
               width: '100vw',
               backgroundColor: '#333333',
               color: 'white',
-              height: '3rem',
+              height: '3.8rem',
               left: '0px',
+              fonteFamily: 'Poppins',
+              
               '& .MuiInputAdornment-root .MuiSvgIcon-root': {
                 color: 'white',
                 marginRight: '1rem',
-                fontSize: '20px'
+                fontSize: '2rem',
+              },
+            },
+            '@media (min-width: 1050px)': {
+
+              '& .MuiInputAdornment-root .MuiSvgIcon-root': {
+                color: '#333',
+                marginRight: '0.5rem',
+                fontSize: '2.2rem',
               },
             }
           },
