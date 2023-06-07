@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "formik": "^2.4.1",
+    "prisma": "^4.15.0",
+    "typescript": "^5.1.3"
+  }
+}
