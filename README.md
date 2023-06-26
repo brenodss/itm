@@ -1,7 +1,6 @@
 <h1 align="center">Projeto da ITM informática</h1>
 
-## Deploy somente frontend
-[Prévia](https://tiny-treacle-6fe69a.netlify.app/)
+## Deploy somente frontend [Prévia](https://tiny-treacle-6fe69a.netlify.app/)
   
 <p align="left">
   Este é um projeto sendo desenvolvido na empresa ITM informática, onde estou trabalhando atualmente. As tecnologias usadas no momento são Typescript, HTML, CSS e React.js.
