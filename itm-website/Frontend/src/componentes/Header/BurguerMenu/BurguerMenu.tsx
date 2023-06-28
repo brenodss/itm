@@ -6,10 +6,13 @@ import BurguerOpen from '../BurguerOpen/BurguerOpen'
 function BurguerMenu() {
   const [burguerOpen, setBurguerOpen] = useState(false)
   return (
+    <div>
         <button className='burguer-button'>
             <img onClick={() => setBurguerOpen(true)} className='burger-menu' src={MenuIcon}/>
-            {burguerOpen && <BurguerOpen setBurger={setBurguerOpen} />}
         </button>
+
+        {burguerOpen && <BurguerOpen setBurger={setBurguerOpen} />}
+    </div>
   )
 }
 
