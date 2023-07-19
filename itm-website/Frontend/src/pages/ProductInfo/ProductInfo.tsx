@@ -8,18 +8,35 @@ function ProductInfo() {
 	const [productInfo, setProductInfo] = useState()
 
 	useEffect(() => {
-		const getCurrentProduct = async () => {
-			const url = `https://fakestoreapi.com/products/${params.i}`
-			const request = await fetch(url)
-			const json = await request.json()
-			setProductInfo(json)
-		}
-		getCurrentProduct()
+		// const getCurrentProduct = async () => {
+		// 	const url = `https://fakestoreapi.com/products/${params.i}`
+		// 	const request = await fetch(url)
+		// 	const json = await request.json()
+		// 	setProductInfo(json)
+		// }
+		// getCurrentProduct()
+
+		const getProducts = async () => {
+			let headersList = {
+			  "charset": "charset: UTF-8",
+			  "Content-Type": "application/json",
+			  "session": "5ffbfaced1b85ff571d1961992866591"
+			 }
+			 // lcp --proxyUrl http://itm.objectdata.com.br
+			 let response = await fetch("http://localhost:8010/proxy/api/produto", { 
+			   method: "GET",
+			   headers: headersList
+			 });
+			 
+			 let data = await response.text();
+			 console.log(data);
+		  }
+		  getProducts()
 	}, [])
 
   return (	
     <div className='flex flex-row justify-center items-center'>
-		{productInfo && 
+		{/* {productInfo && 
 		<div className='product-info-card'>
 			<img className='product-info-image' src={productInfo["image"]}></img>
 
@@ -56,7 +73,7 @@ function ProductInfo() {
 				<button className='bg-green-500 text-white font-bold text-4xl rounded-md h-20 w-full relative -bottom-11 flex items-center justify-center'>COMPRAR COM DESCONTO 💳</button>
 			</div>
 		</div>
-		}
+		} */}
 	</div>
   )
 }

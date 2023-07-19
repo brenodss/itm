@@ -1,4 +1,3 @@
-import React from 'react';
 import './style.css';
 import { Formik, Form, Field, FormikHelpers } from 'formik';
 import user from '../../assets/user.svg';
