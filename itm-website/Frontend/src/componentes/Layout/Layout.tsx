@@ -5,8 +5,7 @@ import Header from "../Header/HeaderComponent/Header";
 import Whatsapp from "../WhatsApp/Whatsapp";
 import BannerCard from '../MarketingCard/GameCard/BannerCard';
 
-function Layout({ children }: { children: ReactNode }) {
-  
+function Layout({ children }: { children: ReactNode }) {   
     return (
       <div className='layout-component'>
         <Header />

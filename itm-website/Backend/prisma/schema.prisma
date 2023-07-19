@@ -1,0 +1,55 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model session {
+  id Int @id @default(0)
+  session String
+  expiration_time String
+}
+
+model Produto {
+  product_id       Int @id @default(autoincrement())
+  id               String
+  imagem_grande    String?
+  embalagem        String @default("0")
+  token            String?
+  peso_bruto       Float @default(0)
+  imagem_pequena   String?
+  embalagem_altura Float
+  ncm              String?
+  familia          String
+  codigo_barras    String
+  espaco_interno_altura String
+  descricao        String 
+  icms_descricao   String
+  ext              String?
+  cnpj             String
+  embalagem_comprimento Float
+  preco            Float
+  icms_identificador String
+  origem_mercadoria String
+  quantidade_temporaria Int
+  complemento      String @db.Text
+  imagem_media     String?
+  imagem           String?
+  quantidade       Int
+  embalagem_largura Float
+  quantidade_disponivel Int
+  referencia       String
+  peso_liquido     Float
+  espaco_interno_largura String
+  codigo           String
+  situacao_tributaria String
+  especificacao_tecnica String @db.Text
+  fabricante       String
+  espaco_interno_comprimento String
+}

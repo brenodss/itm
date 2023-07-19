@@ -6,8 +6,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - '3000:3000'
-    environment:
-      - DATABASE_URL=mysql://root:password@db:3306/itm-db
     depends_on:
       - db
     volumes:
