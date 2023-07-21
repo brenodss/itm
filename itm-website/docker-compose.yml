@@ -14,8 +14,8 @@ services:
     image: mysql:latest
     restart: always
     environment:
-      - MYSQL_DATABASE=itm-db
-      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE="itm-website-db-1"
+      - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
     ports:
       - '3306:3306'
     expose:
