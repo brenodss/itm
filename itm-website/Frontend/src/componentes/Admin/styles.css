@@ -1,0 +1,18 @@
+.css-yrdy0g-MuiDataGrid-columnHeaderRow {
+    font-size: 20px;
+    background-color: #222;
+    color: white;
+}
+
+.tableRow {
+    font-size: 16px;
+}
+
+.MuiSvgIcon-root {
+    width: 60px;
+    height: 60px;
+}
+
+tbody {
+    height: 100px;
+}
