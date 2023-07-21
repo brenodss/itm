@@ -5,6 +5,7 @@ import Header from "../Header/HeaderComponent/Header";
 import Whatsapp from "../WhatsApp/Whatsapp";
 import BannerCard from '../MarketingCard/GameCard/BannerCard';
 import {useLocation} from 'react-router-dom'
+import AdminHeader from '../AdminHeader/AdminHeader';
 
 function Layout({ children }: { children: ReactNode }) {   
   const location = useLocation()
@@ -12,7 +13,7 @@ function Layout({ children }: { children: ReactNode }) {
   
     return (
       <div className='layout-component'>
-        <Header />
+        {isAdminPage ? <AdminHeader /> : <Header />}
         {!isAdminPage && <BannerCard />}
         {children}
         <Whatsapp />

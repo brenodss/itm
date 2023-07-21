@@ -8,7 +8,7 @@ const TabelaDadosFakes = () => {
 
   return (
     <div className="h-[200px] mt-[30%] ml-[15%]">
-      <table className="table-auto border-collapse border rounded-sm border-gray-800 w-[65vw]">
+      <table className="table-auto border-collapse border rounded-sm border-gray-800 w-[70vw]">
         <thead className="">
           <tr className="bg-[#222] text-[#ddd] border-b-2 text-4xl text-left p-10">
             <th className="p-2">ID</th>
