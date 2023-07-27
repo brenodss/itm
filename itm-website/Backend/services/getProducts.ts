@@ -1,6 +1,5 @@
 
 import { PrismaClient } from "@prisma/client"
-const prisma = new PrismaClient()
 
 async function getProducts(page: number, limit: number) {
     const prisma = new PrismaClient();

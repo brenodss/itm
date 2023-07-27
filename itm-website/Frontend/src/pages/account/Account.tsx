@@ -2,7 +2,6 @@ import './style.css';
 import { Formik, Form, Field, FormikHelpers } from 'formik';
 import user from '../../assets/user.svg';
 import wave from '../../assets/wave.svg';
-import ILogin from './interfaces';
 import Login from './Login';
 import Register from './Register';
 

@@ -17,9 +17,7 @@
   },
   "scripts": {
     "dev": "nodemon -L index.ts",
-    "seed": "ts-node prisma/seeds.ts"
+    "seed": "ts-node-esm ./prisma/seeds.mjs",
+    "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\""
   },
-  "prisma": {
-    "seed": "node --loader ts-node/esm ./prisma/seeds.ts"
-  }
 }
