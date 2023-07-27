@@ -9,7 +9,7 @@ function Products() {
     const navigate = useNavigate()
 
     const baseUrl = import.meta.env.VITE_BASE_URL
-
+    
     const setFethedProducts = async () => {
        const fetch = await getProductsByPage(2)
        console.log(fetch);
@@ -28,11 +28,13 @@ function Products() {
     return (
         <div className='product-grid'>
             {products && products?.map(({imagem_media, descricao, preco, codigo}, i) => {
+                console.log(imagem_media);
+                
                 const reducedTitle = descricao.length > 55 ? descricao.slice(0, 55)+'...' : descricao
                 return (
                     <div key={i} className='product-card bg-[white] rounded-md shadow-xl font-[Poppins]'>
                         <button onClick={() => handleGoToProduct(Number(codigo))} className='product-button'>
-                            <img className='product-image' src={`${baseUrl}${imagem_media}`} />
+                            <img className='product-image' src={`http://itm.objectdata.com.br${imagem_media}`} />
                         </button>
                             <span className="product-title text-2xl text-[#42464d] font-semibold font-[Poppins]">{reducedTitle}</span>
                             <span className='product-price-without-discount font-[Poppins]'>R${Number(preco) + 100}</span>  
