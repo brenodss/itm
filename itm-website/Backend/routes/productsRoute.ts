@@ -1,9 +1,8 @@
 import { Router } from 'express';
-import getProducts from '../services/getProducts';
+import {getProducts, getProductsByString} from '../services/getProducts';
 import {PrismaClient} from '@prisma/client'
 
 const prisma = new PrismaClient()
-
 const router = Router();
 
 router.get('/', async (req: any, res) => {
@@ -25,7 +24,6 @@ router.post('/', async (req: any, res) => {
 });
 
 router.get('/qtd', async (req: any, res) => {
-  
   try {
     const quantidade = await prisma.produto.count()
     console.log(quantidade);
@@ -33,6 +31,13 @@ router.get('/qtd', async (req: any, res) => {
   } catch(error) {
     res.send(error)
   }
+});
+
+router.get('/find', async (req: any, res) => {
+  const productString = req.query.product
+  const filteredProducts = await getProductsByString(productString)
+  
+  res.status(200).json(filteredProducts)
 });
 
 router.delete('/del', async (req, res) => {

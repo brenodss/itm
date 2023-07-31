@@ -16,8 +16,8 @@
     "zod": "^3.21.4"
   },
   "scripts": {
-    "dev": "nodemon -L index.ts",
+    "dev":  "nodemon index.ts",
     "seed": "ts-node-esm ./prisma/seeds.mjs",
     "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\""
-  },
+  }
 }

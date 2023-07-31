@@ -5,6 +5,7 @@ import SignIn from '../Sign/SignIn';
 import Cart from '../Cart/Cart';
 import BurguerMenu from '../BurguerMenu/BurguerMenu';
 import ItmTitle from '../ITM/ItmTitle';
+import CustomSearchBar from '../SearchBar/CustomSearchBar';
 
 export default function Header() {
   
@@ -17,7 +18,8 @@ export default function Header() {
           <ItmTitle />
         </div>
         <div className='searchbar'>
-          <SearchBar />
+          {/* <SearchBar /> */}
+          <CustomSearchBar />
         </div>
         <div className='signin'>
           <SignIn />

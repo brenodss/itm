@@ -5,7 +5,7 @@ const prisma = new PrismaClient()
 
 async function seedProducts() {
   try {
-    fs.readFile('./prisma/produtos.json', 'utf8', async (err, data) => {
+    fs.readFile('./produtos.json', 'utf8', async (err, data) => {
       if (err) {
         console.error(err);
         return;
@@ -39,8 +39,7 @@ async function seedSession() {
 
 async function main() {
   try {
-    await prisma.$connect()
-    console.log('CONNECTED');
+    // await prisma.$connect()
     await seedProducts()
     await seedSession()
   } catch(er) {

@@ -11,7 +11,7 @@ function SignIn() {
   }
 
   return (
-    <div className='display-row-center'>
+    <div className='display-row-center ml-[5vw]'>
         <img className='h-[4rem] w-[4rem]' src={UserSign} />
         <div>
           <button onClick={handleButton} className='account-input'>

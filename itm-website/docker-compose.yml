@@ -1,11 +1,11 @@
 version: '3'
 
 services:
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 8080:8080
   backend:
     build:
       context: ./Backend
@@ -16,6 +16,7 @@ services:
       - db
     volumes:
       - ./Backend:/app
+    command: nodemon -L index.ts
   db:
     image: mysql:latest
     restart: always
@@ -32,8 +33,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - '80:80'
-    environment:
-      - VITE_API_URL=http://backend:3000
     volumes:
       - './Frontend:/app'
       

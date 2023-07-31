@@ -1,21 +1,21 @@
 .search-wraper {
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    left: 0;
+    width: 100%;
+
 }
     
 @media (min-width: 1050px) {
-    .MuiTextField-root {
+    .search-input {
+            width: 95%;
+        }  
 
-        }      
     }
 @media (max-width: 1049px) {
     .search-wraper {
         position: absolute;
         top: 6rem;
+        left: 0;
       }
     .search-input {
-        width: 100vw;
+        width: 100%;
     }
 }
