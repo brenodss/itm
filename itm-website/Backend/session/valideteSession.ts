@@ -16,18 +16,18 @@ const validateSession = async () => {
     try {
         const firstSession = await prisma.session.findFirst()
         
-        if(firstSession?.session && !checkIsExpired(firstSession.expiration_time)) {
+        if(firstSession?.session && !checkIsExpired(firstSession.expiration_time)) {            
             return firstSession.session
         }
-    
-        const {erro, message, expiration_time, session}: ISession = await getSession()
+        
+        const {erro, expiration_time, session}: ISession = await getSession()
         
         if(!firstSession?.session && session && expiration_time) {
             await prisma.session.create({data: { id:0, session, expiration_time }})
             return
         }
     
-        if(!erro) {
+        if(!erro) {            
             await prisma.session.update({ where: {id: 0}, data: {id:0, session, expiration_time }})
             return session
         }

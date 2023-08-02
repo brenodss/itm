@@ -1,16 +1,14 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express from 'express';
 import productsRoute from './routes/productsRoute';
-import validateSession from './session/valideteSession';
+import requestsRoute from './routes/requestsRoute'
 import bodyParser from 'body-parser'
+import sessionMiddleware from './middlewares/sessionMiddleware';
 
 const app = express();
 app.use(bodyParser.json());
 
-app.use('/produtos', async (req: any, res: Response, next: NextFunction) => {
-    const session = await validateSession()
-    req.session = session
-    next()
-}, productsRoute);
+app.use('/produtos', productsRoute);
+app.use('/pedidos', sessionMiddleware, requestsRoute);
 
 app.listen(3000, () => {
   console.log('Servidor rodando na porta 3000');
