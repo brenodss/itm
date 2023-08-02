@@ -9,7 +9,8 @@ const getOrders = async (session: string, start: string, end: string) => {
       method: 'GET',
       url: `${baseUrl}/pedido/?
               data_conclusao_inicio=${start}&
-              data_conclusao_fim=${end}`,
+              data_conclusao_fim=${end}&
+              limit=20`,
       headers: {
         Accept: '*/*',
         session
