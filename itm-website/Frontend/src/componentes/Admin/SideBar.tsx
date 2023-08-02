@@ -1,5 +1,3 @@
-
-
 const SideBar = () => {
     return (
         <div className="bg-[#222] h-[135%] w-[20%] absolute left-0 flex flex-col items-center">

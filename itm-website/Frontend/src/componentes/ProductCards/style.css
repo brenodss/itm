@@ -17,11 +17,12 @@
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-gap: 7rem;
     margin-top: 1rem;
-    width: 80vw;
+    width: 90vw;
     margin-bottom: 8rem;
     overflow-y: hidden;
     min-height: 100%;
     justify-content: center;
+
   }
   
   .product-image {
