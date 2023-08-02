@@ -13,22 +13,22 @@ const TabelaDadosFakes = () => {
   }
 
   return (
-    <div className="h-[200px] mt-[30%] ml-[15%]">
+    <div className="h-[200px]">
       <table className="table-auto border-collapse border border-gray-800 w-[70vw]">
         <thead className="">
-          <tr className="bg-[#222] text-[#ddd] border-b-2 text-4xl text-left p-10">
+          <tr className="bg-[#222] text-[#ddd] border-b-2 text-2xl text-left p-10">
             <th className="p-2">ID</th>
             <th className="p-2">Nome</th>
             <th className="p-2">Idade</th>
             <th className="p-2">Cidade</th>
-            <th className="p-2 w-[100px] text-center">Ação</th>
+            <th className="p-2 w-[100px] text-center border-l-2">Ação</th>
           </tr>
         </thead>
         <tbody className="h-[150px]">
           {dadosFakes.map((dados, i) => (
             <tr key={dados.id} className={`${isEven(i) ? 'bg-[#cdcdcd]' : 'bg-[#00800055]'} text-2xl border-b-[1px] border-[#222]`}>
               <td className="p-2 text-left]">
-                <FcCheckmark className='text-4xl' />  
+                <FcCheckmark className='text-4xl' color="red" />  
               </td>
               <td className="p-2 text-left">{dados.nome}</td>
               <td className="p-2 text-left">{dados.idade}</td>

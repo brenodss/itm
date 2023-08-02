@@ -1,3 +1,4 @@
+import AdminForm from './AdminForm'
 import CustomTable from './CustomTable'
 import SideBar from './SideBar'
 
@@ -8,7 +9,10 @@ const AdminPage = () => {
                 <input className='bg-orange-600'></input>
             </div>
             <SideBar />
-            <CustomTable />
+            <div className="flex flex-col items-center justify-center ml-[15%] mr-[15%]">
+                <AdminForm />
+                <CustomTable />
+            </div>
         </div>
     )
 }
