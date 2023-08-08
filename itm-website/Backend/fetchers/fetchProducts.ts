@@ -1,28 +1,22 @@
 import axios, {AxiosError} from 'axios'
 
-const getOrders = async (session: string, start: string, end: string) => {
+const getProducts = (page: string, session: string) => {
   const baseUrl = process.env.BASE_URL
 
   try {
 
     const options = {
       method: 'GET',
-      url: `${baseUrl}/pedido/?
-              data_conclusao_inicio=${start}&
-              data_conclusao_fim=${end}&
-              limit=20`,
+      url: `${baseUrl}/produto/?page=${page}`,
+      
       headers: {
         Accept: '*/*',
         session
       }
     };
-     const response = await axios.request(options)     
-     const data = response.data
+     const response: any = axios.request(options)     
      
-     return {
-      ...data,
-      code: response.status
-     }
+     return response
 
   } catch(error: any) {
 
@@ -36,4 +30,4 @@ const getOrders = async (session: string, start: string, end: string) => {
     
 }
 
-export default getOrders
+export default getProducts

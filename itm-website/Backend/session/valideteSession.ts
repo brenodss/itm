@@ -1,5 +1,5 @@
 import checkIsExpired from "./checkIsExpired";
-import getSession from "../fetchers/getSession"
+import getSession from "../fetchers/fetchSession"
 import {PrismaClient} from '@prisma/client'
 
 const prisma = new PrismaClient()

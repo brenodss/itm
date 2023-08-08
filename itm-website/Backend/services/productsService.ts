@@ -1,45 +1,34 @@
+import fetchProductsByQuery from "../fetchers/fetchProductsByQuery";
+import fetchProducts from "../fetchers/fetchProducts";
+import IProducts from '../interfaces/IProduct'
 
-import { PrismaClient } from "@prisma/client"
-const prisma = new PrismaClient();
-
-async function getProducts(page: number, limit: number) {
-
-    const products = await prisma.produto.findMany({
-        where: {
-            quantidade_disponivel: {gt: 0},
-            imagem_media: {not: null }
-        },
-        skip: (page - 1) * limit,
-        take: limit,
-    });
-    
-    return {
-        products,
-        totalPages: Math.ceil(products.length / limit),
-    };
+async function getProductsByQueryService(page: string, limit: number, session: string, query: string) {
+    const products = await fetchProductsByQuery(page, session, query);
+    return products;
 }
 
-async function getProductsByString(productString: string) {
+async function getProductsService(page: string, session: string) {
+    const pageEnd = Number(page) + 4
+    let productsPromises: any = [];
+    let productsResponse: IProducts[] = []
+    
+    for (let i = Number(page); (i <= pageEnd); i += 1) {
+        const fetchOnePage = fetchProducts(i.toString(), session);
+        productsPromises.push(fetchOnePage);
+    }
 
     try {
-        const filteredProductsByString = await prisma.produto.findMany({
-          where: {
-            descricao: {
-              contains: productString
-            },
-            quantidade_disponivel: {gt: 0},
-            imagem_pequena: {not: null}
-          },
-          take: 30
-        })
+        const fetchedProducts = await Promise.all(productsPromises);
+        productsResponse = [].concat(...fetchedProducts.map(product => product.data));
         
-        return filteredProductsByString
-      } catch(error) {
-        return 'Erro'
-      }
+        return productsResponse
+    } catch (error) {
+        console.error("Erro:", error);
+        throw new Error("Ocorreu um erro ao buscar os produtos.");
+    }
 }
 
 export {
-    getProducts,
-    getProductsByString
+    getProductsByQueryService,
+    getProductsService
 }

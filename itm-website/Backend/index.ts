@@ -7,7 +7,7 @@ import sessionMiddleware from './middlewares/sessionMiddleware';
 const app = express();
 app.use(bodyParser.json());
 
-app.use('/produtos', productsRoute);
+app.use('/produtos', sessionMiddleware, productsRoute);
 app.use('/pedidos', sessionMiddleware, requestsRoute);
 
 app.listen(3000, () => {

@@ -1,25 +1,19 @@
 import axios, {AxiosError} from 'axios'
 
-interface ISession {
-  expiration_time?:string;
-  code: number;
-  session?: string;
-  message: string;
-  erro?: string;
-}
-
-const getSession = async () => {
+const getOrders = async (session: string, start: string, end: string) => {
   const baseUrl = process.env.BASE_URL
-  
+
   try {
 
     const options = {
-      method: 'POST',
-      url: 'http://itm.objectdata.com.br/api/',
+      method: 'GET',
+      url: `${baseUrl}/pedido/?
+              data_conclusao_inicio=${start}&
+              data_conclusao_fim=${end}&
+              page=0`,
       headers: {
         Accept: '*/*',
-        login: process.env.LOGIN as string,
-        senha: process.env.PASSWORD as string
+        session
       }
     };
      const response = await axios.request(options)     
@@ -28,10 +22,9 @@ const getSession = async () => {
      return {
       ...data,
       code: response.status
-     }  as unknown as ISession
+     }
 
   } catch(error: any) {
-    console.log(error.statusCode);
 
     if(error instanceof AxiosError) {
       return {erro: error.message}
@@ -43,4 +36,4 @@ const getSession = async () => {
     
 }
 
-export default getSession
+export default getOrders

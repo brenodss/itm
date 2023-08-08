@@ -50,3 +50,10 @@ model Produto {
   fabricante       String?
   espaco_interno_comprimento String?
 }
+
+model User {
+  name String
+  cpf String @unique
+  email String @unique
+  address String
+}

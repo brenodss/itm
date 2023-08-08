@@ -1,18 +1,24 @@
 import { Router } from 'express';
-import {getProducts, getProductsByString} from '../services/productsService';
+import {getProductsByQueryService, getProductsService} from '../services/productsService';
 
 const router = Router();
 
-router.get('/', async (req: any, res) => {
+router.get('/find', async (req: any, res) => {
   const page = req.query.page || 1
-  const products = await getProducts(page, 60)
+  const session = req.session
+  const query = req.query.produto
+  const limit = req.query.limit || 30
+
+  const products = await getProductsByQueryService(page, limit, session, query)
   
   res.status(200).json(products)
 });
 
-router.get('/find', async (req: any, res) => {
-  const productString = req.query.product
-  const filteredProducts = await getProductsByString(productString)
+router.get('/', async (req: any, res) => {
+  const session = req.session
+  const page = req.query.page || 0
+  
+  const filteredProducts = await getProductsService(page, session)
   
   res.status(200).json(filteredProducts)
 });
