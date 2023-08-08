@@ -15,9 +15,9 @@
     margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-gap: 7rem;
+    grid-row-gap: 2rem;
     margin-top: 1rem;
-    width: 90vw;
+    width: 95vw;
     margin-bottom: 8rem;
     overflow-y: hidden;
     min-height: 100%;

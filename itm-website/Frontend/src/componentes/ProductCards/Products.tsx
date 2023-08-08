@@ -10,13 +10,15 @@ function Products() {
 
     const baseUrl = import.meta.env.VITE_BASE_URL || "http://itm.objectdata.com.br"
     
-    const setFethedProducts = async () => {
-       const fetch = await getProductsByPage(2)       
-       setProducts(fetch.products)
+    const setFetchedProducts = async () => {
+       const fetch: any = await getProductsByPage(0)
+       console.log(fetch);
+       
+       setProducts(fetch)
     }
 
     useEffect(() => {
-        setFethedProducts()
+        setFetchedProducts()
     }, [])
 
     const handleGoToProduct = (id: number) => {
@@ -24,14 +26,14 @@ function Products() {
     }
 
     return (
-        <div className='product-grid'>
-            {products && products?.map(({imagem_media, descricao, preco, codigo}, i) => {
+        <div onClick={() => console.log(products)} className='product-grid'>
+            {products && products?.map(({imagem_pequena, descricao, preco, codigo}, i) => {
                 
                 const reducedTitle = descricao.length > 55 ? descricao.slice(0, 55)+'...' : descricao
                 return (
                     <div key={i} className='product-card bg-[white] rounded-md shadow-xl font-[Poppins]'>
                         <button onClick={() => handleGoToProduct(Number(codigo))} className='product-button'>
-                            <img className='product-image' src={`${baseUrl}${imagem_media}`} />
+                            <img className='product-image' src={`${baseUrl}${imagem_pequena}`} />
                         </button>
                             <span className="product-title text-2xl text-[#42464d] font-semibold font-[Poppins]">{reducedTitle}</span>
                             <span className='product-price-without-discount font-[Poppins]'>R${Number(preco) + 100}</span>  
