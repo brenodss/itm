@@ -1,9 +1,21 @@
-import { useEffect, useContext, useState } from 'react';
-import AppContext from '../../../context/appContext';
+import { useEffect, useState } from 'react';
 import requestProducts from './findProducts';
 
+interface IProduct {
+  imagem_grande: string;
+  embalagem: string;
+  token: string;
+  peso_bruto: string;
+  imagem_pequena: string;
+  // ... outros campos
+}
+
+interface IError {
+  erro: string;
+}
+
 const useDynamicSearchWithTimer = (productString: string) => {
-  const [filteredResults, setFilteredResults] = useState([]);
+  const [filteredResults, setFilteredResults] = useState<IProduct[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [timer, setTimer] = useState<number | null>(null);
 
@@ -14,12 +26,18 @@ const useDynamicSearchWithTimer = (productString: string) => {
     setIsLoading(true);
     setTimer(
       window.setTimeout(async () => {
-        const responseProducts = await requestProducts(productString)
-        setFilteredResults(responseProducts);
+        const responseProducts: [] | IError = await requestProducts(productString);
+        if (responseProducts && 'erro' in responseProducts) {
+          setFilteredResults([]);
+        }
+        else {
+          setFilteredResults(responseProducts);
+        }        
         setIsLoading(false);
       }, 1000)
     );
 
+    return () => { if (timer) clearTimeout(timer) };
   }, [productString]);
 
   return {

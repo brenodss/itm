@@ -13,17 +13,19 @@ const getSession = async () => {
   
   try {
 
-    const options = {
+
+    var options = {
       method: 'POST',
-      url: baseUrl,
+      url: `${baseUrl}/`,
       headers: {
         Accept: '*/*',
-        login: process.env.LOGIN as string,
-        senha: process.env.PASSWORD as string
+        login: process.env.LOGIN,
+        senha: process.env.PASSWORD
       }
     };
-     const response = await axios.request(options)     
-     const data = response.data
+    
+    const response = await axios.request(options)
+    const data = response.data
      
      return {
       ...data,
@@ -31,10 +33,9 @@ const getSession = async () => {
      }  as unknown as ISession
 
   } catch(error: any) {
-    console.log(error.statusCode);
-
-    if(error instanceof AxiosError) {
-      return {erro: error.message}
+    
+    if(error.response instanceof AxiosError) {
+      return {erro: error.response.data.message}
     }
     else {
       return {erro: `Erro desconhecido: ${error} `}

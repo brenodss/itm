@@ -16,7 +16,7 @@ const validateSession = async () => {
     try {
         const firstSession = await prisma.session.findFirst()
         
-        if(firstSession?.session && !checkIsExpired(firstSession.expiration_time)) {            
+        if(firstSession?.session && !checkIsExpired(firstSession.expiration_time)) {                        
             return firstSession.session
         }
         

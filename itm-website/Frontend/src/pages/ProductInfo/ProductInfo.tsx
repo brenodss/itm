@@ -4,41 +4,34 @@ import './style.css'
 import RatingStars from '../../componentes/RatingStars/RatingStars'
 
 function ProductInfo() {
-	const params = useParams()
+	const {i} = useParams()
 	const [productInfo, setProductInfo] = useState()
+	const baseUrl = import.meta.env.VITE_BASE_URL
 
 	useEffect(() => {
-		// const getCurrentProduct = async () => {
-		// 	const url = `https://fakestoreapi.com/products/${params.i}`
-		// 	const request = await fetch(url)
-		// 	const json = await request.json()
-		// 	setProductInfo(json)
-		// }
-		// getCurrentProduct()
-
 		const getProducts = async () => {
 			let headersList = {
 			  "charset": "charset: UTF-8",
 			  "Content-Type": "application/json",
-			  "session": "5ffbfaced1b85ff571d1961992866591"
 			 }
-			 // lcp --proxyUrl http://itm.objectdata.com.br
-			 let response = await fetch("http://localhost:8010/proxy/api/produto", { 
+
+			 let response = await fetch(`http://localhost:3000/produtos/${i}`, { 
 			   method: "GET",
 			   headers: headersList
 			 });
 			 
-			 let data = await response.text();
-			 console.log(data);
+			 let data = await response.json()
+			 
+			 setProductInfo(data[0])
 		  }
 		  getProducts()
 	}, [])
 
   return (	
     <div className='flex flex-row justify-center items-center'>
-		{/* {productInfo && 
+		{productInfo && 
 		<div className='product-info-card'>
-			<img className='product-info-image' src={productInfo["image"]}></img>
+			<img className='w-full h-full' src={`${baseUrl}${productInfo.imagem_grande}`}></img>
 
 			<div className='border border-gray-300 w-8/12 min-w-[55%] h-full bg-opacity-75 bg-gray-900 ml-10 box-border rounded-md flex flex-col justify-around'>
 
@@ -73,7 +66,7 @@ function ProductInfo() {
 				<button className='bg-green-500 text-white font-bold text-4xl rounded-md h-20 w-full relative -bottom-11 flex items-center justify-center'>COMPRAR COM DESCONTO 💳</button>
 			</div>
 		</div>
-		} */}
+		}
 	</div>
   )
 }
