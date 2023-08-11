@@ -1,13 +1,13 @@
 import axios, {AxiosError} from 'axios'
 
-const getProducts = (page: string, session: string) => {
+const fetchOneProductInfo = (codigo: string, session: string) => {
   const baseUrl = process.env.BASE_URL
 
   try {
 
     const options = {
       method: 'GET',
-      url: `${baseUrl}/produto/?estoque_maior_zero=true&page=${page}`,
+      url: `${baseUrl}/produto/?codigo=${codigo}`,
       
       headers: {
         Accept: '*/*',
@@ -21,7 +21,7 @@ const getProducts = (page: string, session: string) => {
   } catch(error: any) {
 
     if(error instanceof AxiosError) {
-      // return {erro: error.message}
+      return {erro: error.message}
     }
     else {
       return {erro: `Erro desconhecido: ${error} `}
@@ -30,4 +30,4 @@ const getProducts = (page: string, session: string) => {
     
 }
 
-export default getProducts
+export default fetchOneProductInfo

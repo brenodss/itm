@@ -8,11 +8,10 @@ function Products() {
     const [products, setProducts] = useState<IProduct[]>()
     const navigate = useNavigate()
 
-    const baseUrl = import.meta.env.VITE_BASE_URL || "http://itm.objectdata.com.br"
+    const baseUrl = import.meta.env.VITE_BASE_URL
     
     const setFetchedProducts = async () => {
        const fetch: any = await getProductsByPage(0)
-       console.log(fetch);
        
        setProducts(fetch)
     }
@@ -26,7 +25,7 @@ function Products() {
     }
 
     return (
-        <div onClick={() => console.log(products)} className='product-grid'>
+        <div className='product-grid'>
             {products && products?.map(({imagem_pequena, descricao, preco, codigo}, i) => {
                 
                 const reducedTitle = descricao.length > 55 ? descricao.slice(0, 55)+'...' : descricao

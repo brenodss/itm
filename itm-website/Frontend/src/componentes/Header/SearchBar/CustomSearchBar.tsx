@@ -10,21 +10,24 @@ const CustomSearchBar = ({}) => {
 
   const CustomOption = (props: any) => (
     <div className='mt-5 mb-5'>
-
-    <button onClick={() => setProductString(props.data.descricao)} >
-      <div className='flex flex-row items-center flex-start text-start'>
-          <img
-            className='w-40 h-40 object-contain'
-            src={`http://itm.objectdata.com.br${props.data.imagem_pequena}`}
-            alt='produto-image'
-          />
-        <div className='flex flex-col ml-10'>
-          <span>{props.data.descricao}</span>
-          <span className='text-[#ff5510]'>{`${props.data.preco}R$`}</span>
+      
+    {<> 
+        <button onClick={() => setProductString(props.data.descricao)} >
+        <div className='flex flex-row items-center flex-start text-start'>
+            <img
+              className='w-40 h-40 object-contain'
+              src={`http://itm.objectdata.com.br${props.data.imagem_pequena}`}
+              alt='produto-image'
+            />
+          <div className='flex flex-col ml-10'>
+            <span>{props.data.descricao}</span>
+            <span className='text-[#ff5510]'>{`${props.data.preco}R$`}</span>
+          </div>
         </div>
-      </div>
-    </button>
-    <hr className='border border-[#ddd] w-full'></hr>
+      </button>
+      <hr className='border border-[#ddd] w-full'></hr>
+    </>
+    }
 
     </div>
     
@@ -36,6 +39,7 @@ const CustomSearchBar = ({}) => {
         className='basic-single text-2xl font-bold border-none'
         classNamePrefix='color-[#ddd]'
         placeholder='O que está procurando?'
+        noOptionsMessage={() =>  productString ? 'Não encontramos resultados' : 'Faça sua busca'}
         styles={{
           input: (base, _props) => ({...base,
              '@media (min-width: 1049px)': {

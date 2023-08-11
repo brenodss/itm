@@ -2,12 +2,13 @@ import axios, {AxiosError} from 'axios'
 
 const getProducts = async (page: string = '0', session: string, query: string) => {
   const baseUrl = process.env.BASE_URL
-
+  console.log(page);
+  
   try {
-
+    
     const options = {
       method: 'GET',
-      url: `${baseUrl}/produto/?produto=${query}&page=${page}`,
+      url: `${baseUrl}/produto/?produto=${query}&estoque_maior_zero=true&page=${page}`,
       
       headers: {
         Accept: '*/*',
@@ -15,6 +16,7 @@ const getProducts = async (page: string = '0', session: string, query: string) =
       }
     };
      const response: any = await axios.request(options)  
+     
      const data = Object.values([...response.data])
      
      return data
