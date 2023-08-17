@@ -2,7 +2,6 @@ import axios, {AxiosError} from 'axios'
 
 const getProducts = async (page: string = '0', session: string, query: string) => {
   const baseUrl = process.env.BASE_URL
-  console.log(page);
   
   try {
     

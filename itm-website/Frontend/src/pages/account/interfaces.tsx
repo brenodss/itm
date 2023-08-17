@@ -9,4 +9,5 @@ export interface IRegister {
     password: string;
     cpf: string;
     phone: string;
+    address: string;
 }
