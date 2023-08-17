@@ -12,26 +12,26 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={
-        <Layout>
+        <Layout headerType='normal' showBanner={true} screenHeigh='h-[100vh]'>
           <Products />
         </Layout>
       } />
 
       <Route path="/account" element={
-        <Layout>
+        <Layout headerType='normal' showBanner={false} screenHeigh='h-[150vh]'>
           <Account />
         </Layout>
       } />
 
       <Route path="/product">
         <Route path=":i" element={
-        <Layout>
+        <Layout headerType='normal' showBanner={true} screenHeigh='h-[100vh]'>
           <ProductInfo />
         </Layout>} />
       </Route>
 
       <Route path="/admin" element={
-        <Layout>
+        <Layout headerType='admin' showBanner={false} screenHeigh='h-[150vh]'>
           <AdminPage />
         </Layout>
       } />

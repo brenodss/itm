@@ -25,7 +25,7 @@ async function getProductsService(page: string, session: string) {
             
         return productsResponse
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         
         // throw new Error("Ocorreu um erro ao buscar os produtos.");
     }

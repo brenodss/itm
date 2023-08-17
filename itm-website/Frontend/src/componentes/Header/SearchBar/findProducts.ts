@@ -7,7 +7,6 @@ const requestProducts = async (query: string) => {
         headers: {'Content-Type': 'application/json'},
       });
       const json = await response.json()
-      console.log(json);
       
       return json
     } catch (error) {
