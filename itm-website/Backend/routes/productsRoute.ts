@@ -1,26 +1,33 @@
 import { Router } from 'express';
 import {getOneProductInfoService, getProductsByQueryService, getProductsService} from '../services/productsService';
+import { CustomError } from '../middlewares/errorMiddleware';
 
 const router = Router();
 
-router.get('/find', async (req: any, res) => {
+router.get('/find', async (req: any, res) => {  
   const page = req.query.page || 0
   const session = req.session
   const query = req.query.produto
   const limit = req.query.limit || 30
-
+  console.log(query);
+  
   const products = await getProductsByQueryService(page, limit, session, query)
   
   res.status(200).json(products)
 });
 
 router.get('/', async (req: any, res) => {
-  const session = req.session
-  const page = req.query.page || 0
-  
-  const filteredProducts = await getProductsService(page, session)
-  
-  res.status(200).json(filteredProducts)
+  try {
+    const session = req.session
+    const page = req.query.page || 0
+    
+    const filteredProducts = await getProductsService(page, session)
+    
+    res.status(200).json(filteredProducts)
+
+  } catch(error) {
+    throw CustomError('Erro produtos', 500)
+  }
 });
 
 router.get('/:id', async (req: any, res) => {

@@ -57,14 +57,19 @@ function Login() {
                 )}
               </div>
 
-              <div className=''>
+              <div className='flex flex-row items-center gap-x-16 mt-16'>
                 <button
-                  className='bg-[#00a000] text-white pl-[13px] w-[80px] h-14 text-[2rem] ml-[4rem] rounded-md mt-14 mb-6'
+                  className='bg-[#00a000] text-white pl-[13px] w-[80px] h-14 text-[2rem] ml-[4rem] rounded-md'
                   type='submit'
                 >
                   Entrar
                 </button>
-
+                <button
+                  className='text-[#ff5510] text-[Poppins] text-[18px] font-bold'
+                  type='submit'
+                >
+                  Crie sua conta
+                </button>
               </div>
             </Form>
           )}

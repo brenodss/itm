@@ -13,6 +13,7 @@ interface ISession {
   }
 
 const validateSession = async () => {
+    
     try {
         const firstSession = await prisma.session.findFirst()
         
@@ -23,6 +24,7 @@ const validateSession = async () => {
         const {erro, expiration_time, session}: ISession = await getSession()
         
         if(!firstSession?.session && session && expiration_time) {
+            
             await prisma.session.create({data: { id:0, session, expiration_time }})
             return
         }
@@ -36,7 +38,7 @@ const validateSession = async () => {
             return firstSession?.session
         }
         
-    } catch(error) {
+    } catch(error) {        
         return error
     }
 }
