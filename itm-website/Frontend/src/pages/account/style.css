@@ -21,18 +21,6 @@
     align-items: flex-start;
     }
 
-.register-card {
-    background-color: #1A1A1A;
-    height: 50rem;
-    width: 50rem;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 2rem;
-    }
-
 .error-message {
     color: red;
     font-size: 12px;

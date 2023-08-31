@@ -17,6 +17,7 @@
   },
   "scripts": {
     "dev": "nodemon index.ts",
+    "debug": "node --inspect -r ts-node/register index.ts",
     "seed": "ts-node-esm ./prisma/seeds.mjs",
     "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\""
   }

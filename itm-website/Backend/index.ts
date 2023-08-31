@@ -9,12 +9,9 @@ import registerRoute from './routes/registerRoute';
 const app = express();
 app.use(bodyParser.json());
 
-app.use('/produtos', sessionMiddleware, productsRoute);
+app.use('/produto', sessionMiddleware, productsRoute);
 app.use('/pedidos', sessionMiddleware, requestsRoute);
 app.use('/register',  registerRoute);
-// app.use('/login',  userRoute);
-
-app.use(errorMiddleware)
 
 app.listen(3000, () => {
   console.log('Servidor rodando na porta 3000');

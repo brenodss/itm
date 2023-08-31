@@ -6,6 +6,7 @@ import ProductInfo from './pages/productInfo/ProductInfo';
 import Layout from './componentes/Layout/Layout';
 import Account from './pages/account/Account';
 import AdminPage from './componentes/Admin/AdminPage';
+import RegisterCheckout from './pages/account/RegisterCheckout';
 
 function App() {
 
@@ -18,8 +19,14 @@ function App() {
       } />
 
       <Route path="/account" element={
-        <Layout headerType='normal' showBanner={false} screenHeigh='h-[150vh]'>
+        <Layout headerType='normal' showBanner={false} screenHeigh='h-[120vh]'>
           <Account />
+        </Layout>
+      } />
+
+      <Route path="/register" element={
+        <Layout headerType='normal' showBanner={false} screenHeigh='h-[120vh]'>
+          <RegisterCheckout />
         </Layout>
       } />
 

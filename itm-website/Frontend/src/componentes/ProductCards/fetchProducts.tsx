@@ -6,12 +6,13 @@ const getProductsByPage = async (page: number) => {
     "Content-Type": "application/json",
   }
 
-  const response = await fetch(`http://localhost:3000/produtos/?page=${page}`, {
+  const response = await fetch(`http://localhost:3000/produto/?page=${page}`, {
     method: "GET",
     headers: headersList
   }) as any;
   
   const data = await response.json();
+  
   const changeFormatToArray = Object.values(data);
 
   return changeFormatToArray

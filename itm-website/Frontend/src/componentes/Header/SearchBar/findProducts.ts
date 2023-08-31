@@ -2,7 +2,7 @@ const requestProducts = async (query: string) => {
     try {
       if(!query) return
       
-      const response = await fetch(`http://localhost:3000/produtos/find/?produto=${query}`, {
+      const response = await fetch(`http://localhost:3000/produto/find/?produto=${query}`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'},
       });

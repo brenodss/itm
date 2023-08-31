@@ -28,7 +28,7 @@ function Products() {
         <div className='product-grid'>
             {products && products?.map(({imagem_pequena, descricao, preco, codigo}, i) => {
                 
-                const reducedTitle = descricao.length > 55 ? descricao.slice(0, 55)+'...' : descricao
+                const reducedTitle = descricao?.length > 55 ? descricao?.slice(0, 55)+'...' : descricao
                 return (
                     <div key={i} className='product-card bg-[white] rounded-md shadow-xl font-[Poppins]'>
                         <button onClick={() => handleGoToProduct(Number(codigo))} className='product-button'>
